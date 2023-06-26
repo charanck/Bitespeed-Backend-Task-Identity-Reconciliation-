@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ContactService } from "src/service/contact.service";
+import { ContactService } from "../service/contact.service";
 
 export class ContactController{
     constructor(private contactService:ContactService){}

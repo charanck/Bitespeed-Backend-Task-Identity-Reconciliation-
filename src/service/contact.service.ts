@@ -1,6 +1,6 @@
-import { ContactDao } from "src/dao/contact.dao";
-import { ContactEntity } from "src/dao/entity/contact.entity";
-import { TContact } from "src/dao/entity/types/contact.type";
+import { ContactDao } from "../dao/contact.dao";
+import { ContactEntity } from "../dao/entity/contact.entity";
+import { TContact } from "../dao/entity/types/contact.type";
 
 export class ContactService{
     constructor(private contactDao:ContactDao){}

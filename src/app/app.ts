@@ -1,8 +1,8 @@
 import express, { Request, Response, Express } from "express"
 import path from "path";
-import { ContactController } from "src/controller/contact.controller";
-import { ContactDao } from "src/dao/contact.dao";
-import { ContactService } from "src/service/contact.service";
+import { ContactController } from "../controller/contact.controller";
+import { ContactDao } from "../dao/contact.dao";
+import { ContactService } from "../service/contact.service";
 const sqlite3 = require('sqlite3')
 
 export async function startServer(port:number):Promise<void>{
@@ -33,8 +33,10 @@ async function initializeDependencies(app:Express):Promise<void>{
 }
 
 async function getDbConnection(){
-    const dbPath = path.resolve(__dirname,"../../db/db.sqlite");
-    const dbConnection = new sqlite3.Database(dbPath, (err:any) => {
+    const dbPath = path.resolve(__dirname,"../../../db/db.sqlite");
+    console.log("DB PATH: ",dbPath);
+    
+    const dbConnection = await new sqlite3.Database(dbPath, (err:any) => {
         if (err) {
           console.error(err.message);
           throw err;
