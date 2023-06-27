@@ -4,8 +4,8 @@ CREATE TABLE contacts(
     email TEXT,
     linkedId INTEGER,
     linkPrecedence TEXT,
-    createdAt TEXT NOT NULL,
-    updatedAt TEXT NOT NULL,
-    deletedAt TEXT,
+    createdAt INTEGER NOT NULL,
+    updatedAt INTEGER NOT NULL,
+    deletedAt INTEGER,
     FOREIGN KEY(linkedId) REFERENCES contacts(id)
 );

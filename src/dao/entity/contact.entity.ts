@@ -1,14 +1,14 @@
 import { TContact } from "./types/contact.type";
 
 export class ContactEntity {
-	private id: number | null;
-	private phoneNumber: string | null;
-	private email: string | null;
-	private linkedId: number | null;
-	private linkPrecedence: string;
-	private createdAt: Date;
-	private updatedAt: Date;
-	private deletedAt: Date;
+	public id: number | null;
+	public phoneNumber: string | null;
+	public email: string | null;
+	public linkedId: number | null;
+	public linkPrecedence: string;
+	public createdAt: number;
+	public updatedAt: number;
+	public deletedAt: number | null;
 
 	constructor(options: TContact) {
         this.validate(options);
@@ -18,7 +18,7 @@ export class ContactEntity {
 		this.linkedId = options.linkedId ? options.linkedId : null;
 		this.linkPrecedence = options.linkPrecedence;
 		this.createdAt = options.createdAt;
-		this.deletedAt = options.deletedAt;
+		this.deletedAt = options.deletedAt ? options.deletedAt : null;
 		this.updatedAt = options.updatedAt;
 	}
 

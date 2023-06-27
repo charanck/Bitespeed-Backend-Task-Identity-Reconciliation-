@@ -4,7 +4,7 @@ export interface TContact{
     email?: string,
     linkedId?: number,
     linkPrecedence: string,
-    createdAt:Date,
-    updatedAt:Date,
-    deletedAt:Date
+    createdAt:number,
+    updatedAt:number,
+    deletedAt?:number
 }

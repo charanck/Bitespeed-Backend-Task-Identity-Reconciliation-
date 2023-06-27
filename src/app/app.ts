@@ -8,6 +8,8 @@ const sqlite3 = require('sqlite3')
 export async function startServer(port:number):Promise<void>{
     const app = express();
 
+    app.use(express.json());
+
     await initializeDependencies(app);
     
     app.listen(port,()=>{

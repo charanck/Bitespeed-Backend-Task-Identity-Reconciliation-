@@ -6,7 +6,6 @@ export class ContactController{
 
     async createContact(request:Request,response:Response){
         const res = await this.contactService.createContact(request.body);
-        console.log(res);
         return response.json(res);
     }
 }
